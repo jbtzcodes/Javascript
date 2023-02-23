@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <script src="./app.js"></script> -->
+  <title>Javascript</title>
+</head>
+<body>
+  
+
+  <!-- 1) avec la balise script  (à faire dans des cas particulier)  -->
+  <!-- <script>
+    console.log('hello les devs');
+  </script> -->
+
+
+
+
+<script src="./app.js"></script>
+
+<!-- attribut script -->
+
+<!-- Defer: Cet attribut booléen permet d'indiquer au navigateur que le script doit être exécuté après l'analyse du document et avant l'évènement DOMContentLoaded. Cet attribut ne doit pas être utilisé si l'attribut src est absent (c'est-à-dire pour les scripts contenus déclarés dans les éléments), dans ce cas il n'aurait aucun effet.  -->
+
+<!-- crossorigin: Les balises de script classiques enverront un minimum d'informations à window.onerror pour les scripts qui ne respectent pas les contrôles standard du CORS.  -->
+
+<!-- async: Cet attribut booléen indique si le navigateur doit, dans la mesure du possible, exécuter les scripts de manière asynchrone. Cet attribut ne doit pas être utilisé si l'attribut src est absent (c'est-à-dire pour les scripts « inline » déclarés dans les éléments), dans ce cas il n'aurait aucun effet. -->
+
+<!-- integrity: Cet attribut contient des métadonnées que l'agent utilisateur peut vérifier afin de contrôler qu'une ressource téléchargée n'a pas été modifiée de façon frauduleuse.  -->
+
+<!-- nomodule : Cet attribut booléen indique que le script ne doit pas être exécuté dans le navigateur si celui prend en charge les modules ES6. En pratique, de tels scripts seront utilisés pour couvrir les cas où le navigateur ne prend pas en charge les modules JavaScript.-->
+
+<!-- nonce: Un nonce cryptographique utilisé pour inscrire les scripts en ligne sur une liste blanche pour la règle script-src de la CSP (Content Security Policy). Le serveur doit générer un nonce unique chaque fois qu'il transmet une règle de sécurité. Ce nonce ne doit pas pouvoir être deviné car sinon, il devient trivial d'outrepasser la règle de sécurité. -->
+
+<!-- type: Cet attribut indique le type de script. La valeur de cet attribut peut appartenir à l'une de ces catégories : module, text/javascript etc... -->
+</body>
+</html>

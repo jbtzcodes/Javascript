@@ -1,0 +1,289 @@
+*,::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  --b1: #0e7789;
+  --b2: #084349;
+  --r: #ff3927;
+  --blanc: #f1f1f1;
+}
+
+/* ##################################################### Container slide */
+
+
+body{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  
+}
+.global {
+  width: 400%;
+  height: 100%;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: arial, sans-serif;
+}
+
+
+.content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 8;
+}
+.content1 {
+  background: no-repeat center / cover url('./src/fond.jpg');
+}
+.content2 {
+  background: no-repeat center / cover url('./src/portfolio-img.png');
+}
+.content3 {
+  background: no-repeat center / cover url('./src/fond3.jpg');
+}
+.content4 {
+  background: no-repeat center / cover url('./src/fond4.jpg');
+}
+
+.content .filtre {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(transparent, 50%,#000 );
+  z-index: -1;
+}
+
+/* ##################################################### Slide */
+.contenu {
+  width: 100%;
+  height: 100vh;
+  color: var(--blanc);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction: column;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 300px;
+  min-width: 150px;
+  border-radius: 50%;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+}
+.content h1 {
+  font-size: calc(20px + 1.5vw + 1px);
+  text-align: center;
+  color: var(--blanc);
+}
+.content hr {
+  display: block;
+  border: none;
+  width: 1px;
+  height: 100px;
+  background: var(--r);
+  margin: 2rem 0;
+  position: relative;
+  overflow: visible;
+}
+
+.content hr::before, .content hr::after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--r);
+  position: absolute;
+  left: 50%;
+    transform: translateX(-50%);
+}
+
+.content hr::before{
+  top: 0;
+}
+.content hr::after{
+  bottom: 0;
+}
+.content span {
+  font-size: calc(15px + 0.8vw + 2px);
+}
+
+.content ul {
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  transform: translateY(-50%);
+  list-style: none;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction: column;
+  margin: 4rem 0;
+  
+}
+
+@media screen and (max-width: 780px){
+  .content ul {
+    top: 0;
+    left: 0;
+    flex-direction: row;
+    justify-content:space-around;
+  }
+}
+
+.content ul li {
+  margin: 1rem 0;
+}
+.content ul a {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  color: var(--blanc);
+  transition: color 0.2s ease-in,
+              margin-top 0.2s ease-in;
+}
+
+.content ul a:hover {
+  display: block;
+  color: var(--r);
+}
+
+.btn {
+  display: block;
+  margin-top: 2rem;
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: var(--blanc);
+  background: var(--r);
+  border-radius: 15px;
+  font-weight: 700;
+  text-decoration:none;
+  transition: background 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background: #851e14;
+}
+
+
+/* ##################################################### Boutons */
+.btns-principal {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  padding: 3rem 0;
+  text-align: center;
+}
+.btns-principal span {
+  color: var(--blanc);
+  text-align: center;
+}
+.btns-principal button {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  cursor: pointer;
+  font-size: 30px;
+  border: none;
+  border-radius: 50%;
+  background: none;
+  color: #f1f1f1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  transition: color 0.2s ease-in;
+}
+.btns-principal button:hover {
+  color: var(--r);
+}
+
+.btns-principal button:nth-child(1){
+  left: 1rem;
+}
+.btns-principal button:nth-child(3){
+  right: 1rem;
+}
+
+/* ##################################################### Animation boutons */
+.animation-btn-fin-droit {
+  animation: fin-droit 2s forwards;
+}
+@keyframes fin-droit {
+  0% {
+    right: 1rem;
+  background: #ff3927;
+  }
+
+  20% {
+    right: 1.5rem;
+  }
+
+  40% {
+    right: 0.5rem;
+  }
+
+  60% {
+    right: 1.5rem;
+  }
+
+  80% {
+    right: 0.5rem;
+  }
+
+  100% {
+    right: 1rem;
+  }
+}
+
+.animation-btn-fin-gauche {
+  animation: fin-gauche 2s forwards;
+}
+
+@keyframes fin-gauche {
+  0% {
+    left: 1rem;
+    background: #ff3927;
+  }
+
+  20% {
+    left: 1.5rem;
+  }
+
+  40% {
+    left: 0.5rem;
+  }
+
+  60% {
+    left: 1.5rem;
+  }
+
+  80% {
+    left: 0.5rem;
+  }
+
+  100% {
+    left: 1rem;
+  }
+}
+

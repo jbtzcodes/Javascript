@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue.JS</title>
+</head>
+<body>
+
+
+  <!-- Pour créer des composants il faut les register -->
+  <!-- 1)  on peut les enregistrer localement ou globalement -->
+
+
+  <div id="app1">
+
+
+    <!-- 4 -->
+    <my-comp></my-comp>
+    <my-comp></my-comp>
+
+    
+  </div>
+  <div id="app2">
+<!-- 4 -->
+<my-comp></my-comp>
+<my-comp></my-comp>
+
+    
+  
+</div>
+
+
+
+
+<!-- CDN DE VUE.JS -->
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+
+
+
+    // 2) globalement
+
+    Vue.component('my-comp', {
+      template: '<p>Hello depuis le composant global {{nom}} <button v-on:click="change">Change</button></p>',
+      // 5 les composants peut resembler aux instances car on peut utiliser des méthodes, des données etc.. Sauf que avec la propriété data les composant retourne une fonction qui va nous retourner un objet ajouter  {{nom}} aux template
+      data: function(){
+        return {
+          nom: 'La minute de code'
+        }
+      },
+      // 6 ) Ma fonction est lier a mes instances et cela ne vas pas les changer d'un coup ce qui est pratique alors que si je créer une var ibjt avec le nom ca va me changer tout d'un coup
+      methods: {
+        change: function() {
+          this.nom = "Jonathan"
+        }
+      }
+    })
+
+    // 3) il est enresgitrer de manière globale et nous pouvons l'utiliser sur toutes nos instances. On l'utilise comme une balise HTML
+
+const ins1 = new Vue({
+  el: "#app1",
+  data: {
+  }
+})
+
+
+const ins2 = new Vue({
+  el: "#app2",
+  data: {
+  },
+  methods : {
+
+  }
+})
+        
+    
+    
+  
+    
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+/* styliser le canva en css */
+
+#canvas  {
+
+    border: 1px solid red;
+}

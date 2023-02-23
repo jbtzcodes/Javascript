@@ -1,0 +1,14 @@
+.box {
+  width: 150px;
+  height: 150px;
+  background: salmon;
+  transition: background 0.2s ease-in-out;
+}
+
+.active {
+  background: green;
+}
+
+img {
+  width: 250px;
+}
